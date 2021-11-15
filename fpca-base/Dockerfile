@@ -20,6 +20,12 @@ RUN conda install --quiet --yes \
       "r-doParallel" \
       "r-foreach" \
       "r-openssl" \
+      "r-units" \
+      "r-base64enc" \
+      "r-gdalUtils" \
+      "r-httr" \
+      "r-magick" \
+      "r-png" \
     && conda clean --all -f -y
 
     # "r-units" \
