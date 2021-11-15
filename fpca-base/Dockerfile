@@ -26,14 +26,9 @@ RUN conda install --quiet --yes \
       "r-httr" \
       "r-magick" \
       "r-png" \
+      "r-raster" \
+      "r-sf" \
     && conda clean --all -f -y
-
-    # "r-units" \
-    # "r-base64enc" \
-    # "r-gdalUtils" \
-    # "r-httr" \
-    # "r-magick" \
-    # "r-png" \
 
     # "r-arrow" \
     # "r-raster" \
