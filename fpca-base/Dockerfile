@@ -17,8 +17,25 @@ RUN conda install --quiet --yes \
       "r-readr" \
       "r-stringr" \
       "r-tidyr" \
+      "r-doParallel" \
+      "r-foreach" \
+      "r-openssl" \
     && conda clean --all -f -y
+
+    # "r-units" \
+    # "r-base64enc" \
+    # "r-gdalUtils" \
+    # "r-httr" \
+    # "r-magick" \
+    # "r-png" \
+
+    # "r-arrow" \
+    # "r-raster" \
+    # "r-sf" \
 
 COPY fpcFeatures_0.0.0.0001.tar.gz /fpcFeatures_0.0.0.0001.tar.gz
 RUN R CMD INSTALL --clean --no-html --no-docs --use-vanilla fpcFeatures_0.0.0.0001.tar.gz
+
+#COPY terrainr_0.5.0.tar.gz /terrainr_0.5.0.tar.gz
+#RUN R CMD INSTALL --clean --no-html --no-docs --use-vanilla terrainr_0.5.0.tar.gz
 
