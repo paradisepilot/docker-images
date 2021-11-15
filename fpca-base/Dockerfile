@@ -31,8 +31,6 @@ RUN conda install --quiet --yes \
     && conda clean --all -f -y
 
     # "r-arrow" \
-    # "r-raster" \
-    # "r-sf" \
 
 COPY fpcFeatures_0.0.0.0001.tar.gz /fpcFeatures_0.0.0.0001.tar.gz
 RUN R CMD INSTALL --clean --no-html --no-docs --use-vanilla fpcFeatures_0.0.0.0001.tar.gz
