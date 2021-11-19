@@ -35,6 +35,8 @@ RUN conda install --quiet --yes \
 COPY fpcFeatures_0.0.0.0001.tar.gz /fpcFeatures_0.0.0.0001.tar.gz
 RUN R CMD INSTALL --clean --no-html --no-docs --use-vanilla fpcFeatures_0.0.0.0001.tar.gz
 
+RUN R -e 'DF.CRAN.mirrors <- utils::getCRANmirrors(); myRepoURL <- DF.CRAN.mirrors[grepl(x = DF.CRAN.mirrors[,"Name"], pattern = "0-Cloud"),"URL"]; install.packages(pkgs = c("arrow","terrainr"), repos = myRepoURL, dependencies = TRUE)'
+
 #COPY terrainr_0.5.0.tar.gz /terrainr_0.5.0.tar.gz
 #RUN R CMD INSTALL --clean --no-html --no-docs --use-vanilla terrainr_0.5.0.tar.gz
 
