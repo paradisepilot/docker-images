@@ -35,5 +35,5 @@ RUN conda install --quiet --yes -c arrow-nightlies -c conda-forge --strict-chann
 COPY fpcFeatures_0.0.0.0001.tar.gz /fpcFeatures_0.0.0.0001.tar.gz
 RUN R CMD INSTALL --clean --no-html --no-docs --use-vanilla fpcFeatures_0.0.0.0001.tar.gz
 
-# RUN R -e 'if (!("terrainr" %in% as.character(DF.temp[,"Package"]))) { DF.CRAN.mirrors <- utils::getCRANmirrors(); myRepoURL <- DF.CRAN.mirrors[grepl(x = DF.CRAN.mirrors[,"Name"], pattern = "0-Cloud"),"URL"]; utils::install.packages(pkgs = c("terrainr"), repos = myRepoURL) }'
+# RUN R -e 'if ( !("terrainr" %in% as.character(utils::installed.packages()[,"Package"])) ) { DF.CRAN.mirrors <- utils::getCRANmirrors(); myRepoURL <- DF.CRAN.mirrors[grepl(x = DF.CRAN.mirrors[,"Name"], pattern = "0-Cloud"),"URL"]; utils::install.packages(pkgs = c("terrainr"), repos = myRepoURL) }'
 
