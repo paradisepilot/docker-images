@@ -30,7 +30,7 @@ RUN conda install --quiet --yes \
       "r-sf" \
     && conda clean --all -f -y
 
-RUN conda install --quiet -c arrow-nightlies -c conda-forge --strict-channel-priority r-arrow
+RUN conda install --quiet --yes -c arrow-nightlies -c conda-forge --strict-channel-priority r-arrow
 
 COPY fpcFeatures_0.0.0.0001.tar.gz /fpcFeatures_0.0.0.0001.tar.gz
 RUN R CMD INSTALL --clean --no-html --no-docs --use-vanilla fpcFeatures_0.0.0.0001.tar.gz
