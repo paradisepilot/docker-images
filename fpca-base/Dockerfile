@@ -31,9 +31,9 @@ RUN conda install --quiet --yes \
     && conda clean --all -f -y
 
 RUN conda install --quiet --yes -c arrow-nightlies -c conda-forge --strict-channel-priority r-arrow
+RUN conda install --quiet --yes -c conda-forge google-cloud-sdk
 
 COPY fpcFeatures_0.0.0.0001.tar.gz /fpcFeatures_0.0.0.0001.tar.gz
 RUN R CMD INSTALL --clean --no-html --no-docs --use-vanilla fpcFeatures_0.0.0.0001.tar.gz
 
 RUN R -e 'if ( !("terrainr" %in% as.character(utils::installed.packages()[,"Package"])) ) { DF.CRAN.mirrors <- utils::getCRANmirrors(); myRepoURL <- DF.CRAN.mirrors[grepl(x = DF.CRAN.mirrors[,"Name"], pattern = "0-Cloud"),"URL"]; utils::install.packages(pkgs = c("terrainr"), repos = myRepoURL) }'
-
