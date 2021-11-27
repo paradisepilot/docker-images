@@ -5,8 +5,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Default environment
-RUN conda install --quiet --yes \
-      -c conda-forge \
+RUN conda install --quiet --yes -c conda-forge \
       "r-yaml" \
     && conda clean --all -f -y
 
