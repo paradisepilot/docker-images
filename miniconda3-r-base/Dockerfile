@@ -9,5 +9,6 @@ RUN conda install --quiet --yes -c conda-forge \
       "r-yaml" \
     && conda clean --all -f -y
 
+RUN conda install --quiet --yes -c conda-forge vim 
 RUN conda install --quiet --yes -c conda-forge google-cloud-sdk
 
